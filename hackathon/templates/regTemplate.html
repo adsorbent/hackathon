@@ -1,0 +1,32 @@
+<h1>РЕГИСТРАЦИЯ НА УЧАСТИЕ</h1>
+            <form method="POST">
+                <div><label>Имя: <input type="text" name="fname"></label></div>
+                <div><label>Фамилия: <input type="text" name="lname"></label></div>
+                <div><label>Возраст: <input type="text" name="age"></label></div>
+                <div><label>Выберите свои навыки
+
+                    {% for i in range (0,len) %}
+                    <select name="skills{{i}}">
+                        <option value="NaN">---</option>
+                    {% for skill in preDefSkills %}
+                        <option value="{{skill}}">{{skill}}</option>
+                    {%endfor%}
+                    </select>
+                    {%endfor%}
+                </label></div>
+
+                <div><label>Выберите уровень владения навыком
+                    {% for i in range (0,len) %}
+                    <select name="knowledge{{i}}">
+
+                        <option value="NaN">---</option>
+                        <option value="отлично">отлично</option>
+                        <option value="средне">средне</option>
+                        <option value="плохо">плохо</option>
+                    </select>
+                    {%endfor%}
+
+
+                </label></div>
+                <input type="submit" value="Submit">
+            </form>
